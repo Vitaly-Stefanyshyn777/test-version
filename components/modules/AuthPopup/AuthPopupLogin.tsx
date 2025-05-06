@@ -17,13 +17,11 @@ const AuthPopupLogin = ({
   handleSignupWithOAuth,
 }: IAuthSideProps) => {
   const { lang, translations } = useLang();
-  const {
-    spinner,
-    register,
-    errors,
-    handleSubmit,
-    handleSignupWithOAuth: handleOAuthFromForm,
-  } = useAuthForm(singInFx.pending, isSideActive, handleSignIn);
+  const { spinner, register, errors, handleSubmit } = useAuthForm(
+    singInFx.pending,
+    isSideActive,
+    handleSignIn
+  );
 
   const submitForm = (data: IInputs) =>
     handleSignIn({

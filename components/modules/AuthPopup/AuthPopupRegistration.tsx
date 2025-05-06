@@ -16,13 +16,11 @@ const AuthPopupRegistration = ({
   handleSignupWithOAuth,
 }: IAuthSideProps) => {
   const { lang, translations } = useLang();
-  const {
-    spinner,
-    register,
-    errors,
-    handleSubmit,
-    handleSignupWithOAuth: handleOAuthFromForm,
-  } = useAuthForm(singUpFx.pending, isSideActive, handleSignUp);
+  const { spinner, register, errors, handleSubmit } = useAuthForm(
+    singUpFx.pending,
+    isSideActive,
+    handleSignUp
+  ); // виправлено
 
   const submitForm = (data: IInputs) =>
     handleSignUp({
@@ -70,11 +68,10 @@ const AuthPopupRegistration = ({
             </div>
           </div>
         </form>
-        <AuthPopupSocials handleSignupWithOAuth={handleOAuthFromForm} />
+        <AuthPopupSocials handleSignupWithOAuth={handleSignupWithOAuth} />
       </div>
     </div>
   );
 };
-//ff
 
 export default AuthPopupRegistration;
